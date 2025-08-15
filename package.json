@@ -1,0 +1,66 @@
+{
+  "name": "responder-gpt2",
+  "productName": "ResponderGpt2",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon whatsapp.js",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "build-mac": "electron-builder --mac",
+    "build-linux": "electron-builder --linux",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["whatsapp", "ai", "assistant", "electron"],
+  "author": "ResponderGpt2 Team",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "description": "Assistente IA para WhatsApp com processamento de voz e imagem",
+  "build": {
+    "appId": "com.respondergpt2.app",
+    "productName": "ResponderGpt2",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*",
+      "node_modules/@whiskeysockets/**/*",
+      "node_modules/express/**/*",
+      "node_modules/axios/**/*"
+    ],
+    "win": {
+      "icon": "icoresponder.png",
+      "target": "nsis"
+    },
+    "mac": {
+      "icon": "icoresponder.png",
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "icon": "icoresponder.png",
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^24.0.0",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^6.2.0",
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.0",
+    "axios": "^1.4.0",
+    "blob": "^0.1.0",
+    "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.3",
+    "form-data": "^4.0.4",
+    "openai": "^4.52.0",
+    "qrcode-terminal": "^0.12.0",
+    "socket.io": "^4.7.2"
+  }
+}
